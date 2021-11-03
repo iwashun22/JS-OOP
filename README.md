@@ -108,5 +108,27 @@ console.log(a); // expected output: { value: 11 }
 ### Accessing Object
 
 ```js
+let obj = {
+   text: "Hello",
+   id: 19328412
+}
 
+// Two ways to access them
+obj.text = 'Hello world'; 
+obj['text'] = 'Hello world';
+
+delete obj.id; // delete the 'id' property in obj
+
+
+// Access using for loop
+const user = {
+   token: 'asdnvipsnpabsdia',
+   email: 'example@gmail.com',
+   status: 1,
+}
+
+for(const key in user) { 
+   // console.log(`${key}: ${user.key}`); // this will return undefined because the value 'key' is a string
+   console.log(`${key}: ${user[key]}`);
+}
 ```
