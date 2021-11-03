@@ -102,3 +102,11 @@ function increase(obj){
 increase(a);
 console.log(a); // expected output: { value: 11 }
 ```
+
+<hr>
+
+### Accessing Object
+
+```js
+
+```

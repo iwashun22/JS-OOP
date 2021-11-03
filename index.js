@@ -84,3 +84,17 @@
 
 // increase(a);
 // console.log(a); // expected output: { value: 11 }
+
+
+
+
+let obj = {
+   text: "Hello",
+   id: 19328412
+}
+
+// Two ways to access them
+obj.text = 'Hello world'; 
+obj['text'] = 'Hello world';
+
+delete obj.id; // delete the 'id' property in obj
