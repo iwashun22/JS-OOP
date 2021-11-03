@@ -193,7 +193,7 @@ const ps = circle.getPosition();
 console.log(ps);
 ```
 
-> More advance way to do with getters and setters
+> More advance way to work with getters and setters
 
 ```js
 function Circle(radius = 0) {

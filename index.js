@@ -166,33 +166,79 @@
 // console.log(ps);
 
 
-function Circle(radius = 0) {
-   this.radius = radius;
+// function Circle(radius = 0) {
+//    this.radius = radius;
 
-   let position = {
-      x: 1,
-      y: 1
+//    let position = {
+//       x: 1,
+//       y: 1
+//    }
+
+//    this.draw = function() {
+//       console.log('draw');
+//    }
+
+//    // You can set the setters and getter of the property 
+//    Object.defineProperty(this, 'position', {
+//       get: function() {
+//          return position;
+//       },
+//       set: function(obj) {
+//          if(!isNaN(obj.x) && !isNaN(obj.y)){
+//             position = obj;
+//          }
+//       }
+//    })
+// }
+
+// const circle = new Circle(7);
+// console.log(circle.position);
+
+// circle.position = {x: 2, y: 5};
+// console.log(circle.position);
+
+
+
+
+////// exercise ///////
+
+// create stopwatch
+
+function Stopwatch() {
+   let time = 0;
+   let isTicking = false;
+   let tick = null;
+
+   this.start = () => {
+      if(isTicking)
+         throw new Error('Already started!');
+      else
+         isTicking = true;
+         tick = setInterval(() => {
+            time += 0.1;
+         }, 100);
+   };
+
+   this.stop = () => {
+      if(!isTicking)
+         throw new Error('Already stopped!');
+      else
+         isTicking = false;
+         clearInterval(tick);
+   };
+
+   this.reset = () => {
+      if(!isTicking)
+         time = 0;
+      else 
+         throw new Error('The stopwatch is still ticking!');
    }
 
-   this.draw = function() {
-      console.log('draw');
-   }
-
-   // You can set the setters and getter of the property 
-   Object.defineProperty(this, 'position', {
-      get: function() {
-         return position;
-      },
-      set: function(obj) {
-         if(!isNaN(obj.x) && !isNaN(obj.y)){
-            position = obj;
-         }
+   Object.defineProperty(this, 'duration', {
+      get: () => {
+         return Number(time.toFixed(2));
       }
    })
 }
 
-const circle = new Circle(7);
-console.log(circle.position);
-
-circle.position = {x: 2, y: 5};
-console.log(circle.position);
+const sw = new Stopwatch();
