@@ -132,35 +132,67 @@
 
 
 
-function Circle(radius) {
+// function Circle(radius) {
+//    this.radius = radius;
+
+//    // this is now a private property
+//    let position = {
+//       x: 1,
+//       y: 1
+//    }
+   
+//    // view-only for the position property
+//    this.getPosition = () => {
+//       return position;
+//    }
+
+//    this.draw = () => {
+//       movePosition(10, 10);
+//       console.log('draw');
+//    }
+
+//    // You don't want this function to access from outside, because it's already called on draw() function
+//    function movePosition(x, y) {  //  instead of  this.moveposition = () => {}
+//       position.x = x;
+//       position.y = y;
+//       console.log(position);
+//    }
+//    // If you don't use 'this' it will make it private
+// }
+
+// const circle = new Circle(12);
+// circle.draw();
+// const ps = circle.getPosition();
+// console.log(ps);
+
+
+function Circle(radius = 0) {
    this.radius = radius;
 
-   // this is now a private property
    let position = {
       x: 1,
       y: 1
    }
-   
-   // view-only for the position property
-   this.getPosition = () => {
-      return position;
-   }
 
-   this.draw = () => {
-      movePosition(10, 10);
+   this.draw = function() {
       console.log('draw');
    }
 
-   // You don't want this function to access from outside, because it's already called on draw() function
-   function movePosition(x, y) {  //  instead of  this.moveposition = () => {}
-      position.x = x;
-      position.y = y;
-      console.log(position);
-   }
-   // If you don't use 'this' it will make it private
+   // You can set the setters and getter of the property 
+   Object.defineProperty(this, 'position', {
+      get: function() {
+         return position;
+      },
+      set: function(obj) {
+         if(!isNaN(obj.x) && !isNaN(obj.y)){
+            position = obj;
+         }
+      }
+   })
 }
 
-const circle = new Circle(12);
-circle.draw();
-const ps = circle.getPosition();
-console.log(ps);
+const circle = new Circle(7);
+console.log(circle.position);
+
+circle.position = {x: 2, y: 5};
+console.log(circle.position);

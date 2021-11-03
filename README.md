@@ -192,3 +192,38 @@ circle.draw();
 const ps = circle.getPosition();
 console.log(ps);
 ```
+
+> More advance way to do with getters and setters
+
+```js
+function Circle(radius = 0) {
+   this.radius = radius;
+
+   let position = {
+      x: 1,
+      y: 1
+   }
+
+   this.draw = function() {
+      console.log('draw');
+   }
+
+   // You can set the setters and getter of the property 
+   Object.defineProperty(this, 'position', {
+      get: function() {
+         return position;
+      },
+      set: function(obj) {
+         if(!isNaN(obj.x) && !isNaN(obj.y)){
+            position = obj;
+         }
+      }
+   })
+}
+
+const circle = new Circle(7);
+console.log(circle.position);
+
+circle.position = {x: 2, y: 5};
+console.log(circle.position);
+```
