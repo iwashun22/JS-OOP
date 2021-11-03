@@ -44,10 +44,10 @@ circle1.draw();
 
 ### Value and Reference Types
 
-Type | -
------|-----
-Value | `number`, `string`, `boolean`, `undefined`, `null`
-Reference | `Object`, `Function`, `Array`
+Type | - | -
+-----|-----|-----
+Primitive | `number`, `string`, `boolean`, `undefined`, `null` | are copied by their value
+Objects | `Object`, `Function`, `Array` | are copied by their reference
 
 > example code of Value type
 
