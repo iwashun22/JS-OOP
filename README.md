@@ -118,7 +118,7 @@ obj.text = 'Hello world';
 obj['text'] = 'Hello world';
 
 delete obj.id; // delete the 'id' property in obj
-
+console.log(obj); // expected output: { text: 'Hello world' } 
 
 // Access using for loop
 const user = {
