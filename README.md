@@ -151,3 +151,37 @@ if('radius' in circle)
 else
    console.log('This is not a circle');
 ```
+
+<hr>
+
+### Abstraction
+
+When you don't want to make a property or mothod to be able to access from outside.
+
+```js
+function Circle(radius) {
+   this.radius = radius;
+
+   // this is now a private property
+   let position = {
+      x: 1,
+      y: 1
+   }
+
+   this.draw = () => {
+      movePosition(10, 10);
+      console.log('draw');
+   }
+
+   // You don't want this function to access from outside, because it's already called on draw() function
+   function movePosition(x, y) {  //  instead of  this.moveposition = () => {}
+      position.x = x;
+      position.y = y;
+      console.log(position);
+   }
+   // If you don't use 'this' it will make it private
+}
+
+const circle = new Circle(12);
+circle.draw();
+```
