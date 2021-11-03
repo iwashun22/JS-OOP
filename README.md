@@ -1,6 +1,6 @@
 # JS-OOP
 
-### creating Object
+### Creating Object
 
 ```js
 ////  Factory Function  ////
@@ -39,6 +39,8 @@ const circle1 = new Circle(4);
 circle1.draw();
 // ################### //
 ```
+
+<hr/>
 
 ### Value and Reference Types
 
