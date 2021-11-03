@@ -231,7 +231,7 @@ function Stopwatch() {
       if(!isTicking)
          time = 0;
       else 
-         throw new Error('The stopwatch is still ticking!');
+         throw new Error('The stopwatch is still ticking! Stop it first.');
    }
 
    Object.defineProperty(this, 'duration', {
