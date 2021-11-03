@@ -140,6 +140,11 @@ function Circle(radius) {
       x: 1,
       y: 1
    }
+   
+   // view-only for the position property
+   this.getPosition = () => {
+      return position;
+   }
 
    this.draw = () => {
       movePosition(10, 10);
@@ -157,3 +162,5 @@ function Circle(radius) {
 
 const circle = new Circle(12);
 circle.draw();
+const ps = circle.getPosition();
+console.log(ps);
