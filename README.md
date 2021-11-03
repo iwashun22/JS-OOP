@@ -49,7 +49,7 @@ Type | - | -
 Primitive | `number`, `string`, `boolean`, `undefined`, `null` | are copied by their value
 Objects | `Object`, `Function`, `Array` | are copied by their reference
 
-> example code of Value type
+> example code of Primitive type
 
 ```js
 // These variables are just copying but never be same
@@ -80,7 +80,7 @@ a = increase1(a);
 
 <br>
 
-> example code of Reference type
+> example code of Objects type
 
 ```js
 // These variables are stored in somewhere else, it's not copying but will store a data in same place
