@@ -78,6 +78,8 @@ function increase1(number){
 a = increase1(a);
 ```
 
+<br>
+
 > example code of Reference type
 
 ```js
