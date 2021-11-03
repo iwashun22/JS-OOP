@@ -120,15 +120,34 @@ obj['text'] = 'Hello world';
 delete obj.id; // delete the 'id' property in obj
 console.log(obj); // expected output: { text: 'Hello world' } 
 
+
 // Access using for loop
 const user = {
    token: 'asdnvipsnpabsdia',
    email: 'example@gmail.com',
    status: 1,
+   connect: () => {
+      console.log('Connecting to a server');
+   }
 }
 
 for(const key in user) { 
    // console.log(`${key}: ${user.key}`); // this will return undefined because the value 'key' is a string
-   console.log(`${key}: ${user[key]}`);
+   if(typeof user[key] !== 'function')
+      console.log(`${key}: ${user[key]}`);
 }
+
+
+// Using in if-else statement
+const circle = {
+   radius: 3,
+   draw: () => {
+      console.log('draw');
+   }
+}
+
+if('radius' in circle)
+   console.log('Circle has a radius'); // This code will get execute
+else
+   console.log('This is not a circle');
 ```
