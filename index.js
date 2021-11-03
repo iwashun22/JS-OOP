@@ -39,5 +39,27 @@ circle1.draw();
 
 
 
+// These variables are just copying but never be same
+let x = 10;
+let y = x;
+
+x++;
+
+console.log(x); // expected output: 11
+console.log(y); // expected output: 10
 
 
+let a = 10;
+
+function increase(number){
+   number++;
+} 
+
+increase(a);
+console.log(a); // expectes output: 10
+
+// You need to use `return` to reasign the value
+function increase1(number){
+   return number++;
+}
+a = increase1(a);
