@@ -81,5 +81,22 @@ a = increase1(a);
 > example code of Reference type
 
 ```js
+// These variables are stored in somewhere else, it's not copying but will store a data in same place
+let x = { value: 10 };
+let y = x;
 
+x.value++;
+
+console.log(x); // expected output: { value: 11 }
+console.log(y); // expected output: { value: 11 }
+
+
+let a = { value: 10 };
+
+function increase(obj){
+   obj.value++;
+}
+
+increase(a);
+console.log(a); // expected output: { value: 11 }
 ```
